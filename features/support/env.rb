@@ -7,7 +7,7 @@ def opts
     caps: {
     platformName: "Android",
     deviceName: "emulator-5554",
-    app: "C:\\Users\\TECH-W80.LAPTOP-HHQKO8FF\\Downloads\\colorNote.apk"
+    app: "C:\\Users\\TECH-W85\\Downloads\\colorNote.apk"
   }
 }
 
