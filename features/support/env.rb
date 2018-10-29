@@ -15,4 +15,4 @@ end
 
 Appium::Driver.new(opts, true)
 Appium::promote_appium_methods(Appium)
-World(BudgetApp)
+World(ColorNoteApp)
