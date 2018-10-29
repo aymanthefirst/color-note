@@ -1,11 +1,17 @@
-Given("I am on the home pages") do
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I can open the app") do
+  expect(homepage.allow_access_displayed?).to be(true)
 end
 
-When("I log in") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click on allow ColorNote to access media") do
+  expect(homepage.click_allow).to be(true)
 end
 
-Then("I am logged in") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("I click skip") do
+  expect(homepage.tutorial_page_dislpayed?).to be(true)
+  expect(homepage.click_skip).to be(true)
+end
+
+Then("I should be able to access the homepage") do
+  expect(homepage.homepage_displayed?).to be(true)
+  sleep 2
 end
