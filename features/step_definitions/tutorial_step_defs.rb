@@ -9,5 +9,5 @@ When("I click through every tutorial element") do
 end
 
 Then("I am taken to the congratulations page") do
-  
+
 end
