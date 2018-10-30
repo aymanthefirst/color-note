@@ -1,6 +1,7 @@
 require_relative "pages/home_page.rb"
 require_relative "pages/notes_page.rb"
 require_relative "pages/themes_page.rb"
+require_relative "pages/settings_page.rb"
 
 module ColorNoteApp
 
@@ -15,6 +16,10 @@ module ColorNoteApp
 
   def themes_page
     ThemesPage.new($driver)
+  end
+
+  def settings_page
+    SettingsPage.new($driver)
   end
 
 

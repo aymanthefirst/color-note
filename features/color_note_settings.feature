@@ -1,0 +1,9 @@
+@mine2
+Feature: I should be able to access the settings
+
+  Scenario: I should be able to change the default page in the settings
+    Given I am able to access the app
+    And I click skip the tutorial
+    When I click on the nav bar
+    And I click on the settings link
+    Then I should be able to change default page to calendar
