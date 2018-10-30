@@ -10,6 +10,5 @@ module ColorNoteApp
   def notes_page
     NotesPage.new($driver)
   end
-
-
+  
 end
