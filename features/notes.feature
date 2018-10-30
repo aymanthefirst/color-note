@@ -1,3 +1,4 @@
+@mine
 Feature: Notes
 
   Scenario: Accessing the notes page
