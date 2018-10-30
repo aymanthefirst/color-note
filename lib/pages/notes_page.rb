@@ -4,6 +4,4 @@ class NotesPage
     @driver = driver
   end
 
-  
-
 end
