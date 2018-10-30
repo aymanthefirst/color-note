@@ -4,7 +4,6 @@ require_relative "pages/themes_page.rb"
 
 module ColorNoteApp
 
-
   def homepage
     HomePage.new($driver)
   end
@@ -17,5 +16,8 @@ module ColorNoteApp
     ThemesPage.new($driver)
   end
 
+  def calender_page
+    Calender.new($driver)
+  end
 
 end
