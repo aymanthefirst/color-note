@@ -53,4 +53,26 @@ class NotesPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/main_btn1").click
   end
 
+  def click_add_checklist_note
+    @driver.find_elements(:id, "com.socialnmobile.dictapps.notepad.color.note:id/text")[1].click
+  end
+
+  def click_add_checklist_item
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/editlist").find_element(:class, "android.widget.LinearLayout").click
+  end
+
+  def input_checklist_item_text string
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit").send_keys string
+  end
+
+  def input_checklist_item string
+    input_checklist_item_text string
+    @driver.find_element(:id, "android:id/button3").click
+  end
+
+  def input_last_checklist_item string
+    input_checklist_item_text string
+    @driver.find_element(:id, "android:id/button1").click
+  end
+
 end

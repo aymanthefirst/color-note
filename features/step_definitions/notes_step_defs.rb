@@ -26,10 +26,10 @@ end
 Given("I am editting a new note") do
   notes_page.skip_tutorial
   notes_page.click_add_note
-  notes_page.click_add_text_note
+  notes_page.cick_add_text_nte
 
-  # All the previous steps to get here
-  # pending # Write code here that turns the phrase above into concrete actions
+  # All the pevious sps to get here
+  # pending # Write coe here tha tur he phrse above into concee action
 end
 
 When(/I input a note title of (.*)/) do |title|
@@ -60,4 +60,20 @@ end
 
 When("I click add note from the navbar") do
   notes_page.click_add_note_from_nav
+end
+
+When("I click add a checklist note") do
+  notes_page.click_add_checklist_note
+end
+
+When("I click add item") do
+  notes_page.click_add_checklist_item
+end
+
+When(/I add an item called (.*)/) do |item|
+  notes_page.input_checklist_item item
+end
+
+When(/I add a final item called (.*)/) do |item|
+  notes_page.input_last_checklist_item item
 end
