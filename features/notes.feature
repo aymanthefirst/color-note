@@ -1,4 +1,3 @@
-@notesTests
 Feature: Notes
 
   Scenario: Accessing the notes page
@@ -29,7 +28,6 @@ Feature: Notes
     And I click add a text note
     Then I will be on a new notes page
 
-  @checklist
   Scenario: Adding a new checklist
     Given I have opened the app
     And I skip the tutorial
@@ -44,3 +42,10 @@ Feature: Notes
     And I accept the note
     And I click back
     Then I should see a note with the title Test Checklist
+
+  Scenario: Sorting notes
+    Given I have opened the app
+    And I skip the tutorial
+    And I add 3 notes
+    When I sort alphabetically
+    Then I should see 3 notes in alphabetical order
