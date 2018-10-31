@@ -39,9 +39,13 @@ class CalendarPage
   def save_notes_in_calandar
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_note").click
   end
-
-  def click_back_navigation
-    @driver.press_keycode 4
+  
+  def make_the_notes_archive
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/overflow_btn").click
   end
-
+  
+  def click_archive
+    @driver.find_elements(:class, "android.widget.RelativeLayout")[4].click 
+    @driver.find_element(:id, "android:id/button1").click
+  end
 end
