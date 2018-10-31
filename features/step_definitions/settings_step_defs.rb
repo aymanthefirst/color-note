@@ -1,5 +1,8 @@
 #TEST TO SLEECT DEFAULT SCREEN
 When("I click on the settings link") do
+  puts "-------------------------"
+    puts $driver.get_source
+  puts "-------------------------"
   settings_page.click_settings_link
 end
 
@@ -77,4 +80,52 @@ And("I should be able to change the font size to anything else or back to defaul
   notes_page.click_back_navigation # KEYCODE_BACK
   settings_page.click_on_existing_note
   sleep 3
+end
+
+#TEST TO CHANGE LIST ITEM HEIGHT
+Given("I have added a checklist") do
+  notes_page.click_add_note_from_nav
+  notes_page.click_add_checklist_note
+  notes_page.click_add_checklist_item
+  notes_page.input_checklist_item "List 1"
+  notes_page.input_last_checklist_item "List 2"
+  sleep 2
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+When("I have clicked on the settings link") do
+  settings_page.click_settings_link_class_changed_bug
+end
+
+When("I select and change the default list item height") do
+  settings_page.click_list_item_height
+  settings_page.choose_list_item_height_tiny
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+Then("I should be able to select the checklist and see that the list item height has changed") do
+  settings_page.click_on_existing_checklist
+  sleep 2
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+And("I should be able to change the list item height back to default") do
+  themes_page.click_nav_bar
+  settings_page.click_settings_link_class_changed_bug
+  settings_page.click_list_item_height
+  settings_page.choose_list_item_height_normal
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+  sleep 2
+  settings_page.click_on_existing_checklist
+  sleep 2
+end
+
+#TEST TO ADJUST THE WIDGET OPTIONS
+Then("I should be able to change the widget settings") do
+  pending # Write code here that turns the phrase above into concrete actions
 end

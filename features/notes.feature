@@ -33,7 +33,7 @@ Feature: Notes
   Scenario: Adding a new checklist
     Given I have opened the app
     And I skip the tutorial
-    When I click add a note from the navbar
+    When I click add note from the navbar
     And I click add a checklist note
     And I input a note title of Test Checklist
     And I click add item
