@@ -40,4 +40,8 @@ class CalendarPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_note").click
   end
 
+  def click_back_navigation
+    @driver.press_keycode 4
+  end
+
 end

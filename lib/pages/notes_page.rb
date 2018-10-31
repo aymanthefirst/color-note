@@ -4,8 +4,6 @@ class NotesPage
     @driver = driver
   end
 
-<<<<<<< HEAD
-=======
   def click_add_note
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/empty").click
   end
@@ -55,5 +53,4 @@ class NotesPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/main_btn1").click
   end
 
->>>>>>> d705ded545d75058fc3509bf738a87495b529e9c
 end
