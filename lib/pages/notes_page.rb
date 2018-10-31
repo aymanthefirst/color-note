@@ -9,7 +9,6 @@ class NotesPage
   end
 
   def click_add_text_note
-
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/text").click
   end
 
