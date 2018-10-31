@@ -21,10 +21,6 @@ class HomePage
     @driver.find_elements(:id, "com.socialnmobile.dictapps.notepad.color.note:id/tutorial_overlay")[2].find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip").click
   end
 
-  # def click_skip
-  #   @driver.tutorial_page.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip").click
-  # end
-
   def homepage_displayed?
     @driver.find_element(:id,"com.socialnmobile.dictapps.notepad.color.note:id/logo_image").displayed?
   end

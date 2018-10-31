@@ -16,9 +16,6 @@ class ThemesPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/main_logo").click
   end
 
-  def click_calender_link
-  @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
-  end
   def click_themes_link
     @driver.find_elements(:class, "android.widget.LinearLayout")[11].click
   end

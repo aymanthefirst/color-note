@@ -5,11 +5,15 @@ class SettingsPage
   end
 
   def click_settings_link
-    @driver.find_elements(:class, "android.widget.LinearLayout")[5].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[12].click
   end
 
   def click_default_screen
-    @driver.find_elements(:class, "android.widget.LinearLayout")[6].click
+    puts ">>>>>>>>>>>>>>>>>>>>>>"
+    puts @driver.find_elements(:class, "android.widget.LinearLayout")[7][:text]
+    puts "<<<<<<<<<<<<<<<<<<<<<<"
+
+    @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
   end
 
   def click_new_default_option
