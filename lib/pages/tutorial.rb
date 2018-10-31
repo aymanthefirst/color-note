@@ -4,7 +4,7 @@ class Tutorial
     @driver = driver
   end
 
-  def is_first_element_disiplayed?
+  def is_first_element_displayed?
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/textTitle").displayed?
   end
 
