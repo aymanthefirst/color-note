@@ -13,7 +13,6 @@ module ColorNoteApp
     NotesPage.new($driver)
   end
 
-<<<<<<< HEAD
   def themes_page
     ThemesPage.new($driver)
   end
@@ -23,6 +22,4 @@ module ColorNoteApp
   end
 
 
-=======
->>>>>>> notesTestsDan
 end

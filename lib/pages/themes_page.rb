@@ -17,19 +17,19 @@ class ThemesPage
   end
 
   def click_themes_link
-    @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[11].click
   end
 
   def click_soft_theme
-    @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
-  end
-
-  def click_dark_theme
     @driver.find_elements(:class, "android.widget.LinearLayout")[4].click
   end
 
+  def click_dark_theme
+    @driver.find_elements(:class, "android.widget.LinearLayout")[5].click
+  end
+
   def click_default_theme
-    @driver.find_elements(:class, "android.widget.LinearLayout")[2].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
   end
 
 end

@@ -1,18 +1,9 @@
 Given("I have opened the app") do
-<<<<<<< HEAD
-  expect($driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/textTitle")[:text]).to include "Welcome"
-end
-
-When("I skip the tutorial") do
-  $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip").click
-  sleep 3
-=======
   expect(notes_page.get_title_text).to include "Welcome"
 end
 
 When("I skip the tutorial") do
   notes_page.skip_tutorial
->>>>>>> notesTestsDan
 end
 
 Then("I am on the notes page") do

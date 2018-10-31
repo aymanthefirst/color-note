@@ -17,7 +17,15 @@ class SettingsPage
   end
 
   def click_default_color
+    @driver.find_elements(:class, "android.widget.LinearLayout")[8].click
+  end
+
+  def choose_default_color
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").click
+  end
+
+  def check_new_default_color_displayed?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").displayed?
   end
 
 end
