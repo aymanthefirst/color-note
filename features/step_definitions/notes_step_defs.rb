@@ -1,16 +1,14 @@
 Given("I have opened the app") do
-  expect($driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/textTitle")[:text]).to include "Welcome"
+  expect(notes_page.get_title_text).to include "Welcome"
 end
 
 When("I skip the tutorial") do
-  $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip").click
+  notes_page.skip_tutorial
 end
 
 Then("I am on the notes page") do
   sleep 3
-  # $driver.get_source
-  # puts $driver.source
-  expect($driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/empty_text")[:text]).to include "Add Note"
+  expect(notes_page.get_notes_text).to include "Add Note"
 end
 
 #Ayman
@@ -29,6 +27,10 @@ Then("I will be on a new notes page") do
 end
 
 Given("I am editting a new note") do
+  $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn_start_skip").click
+  notes_page.click_add_note
+  notes_page.click_add_text_note
+
   # All the previous steps to get here
   # pending # Write code here that turns the phrase above into concrete actions
 end
@@ -49,14 +51,14 @@ end
 When("I accept the note") do
   # $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/back_btn").click
   sleep 2
-  $driver.press_keycode 4 # closing keyboard
-  $driver.press_keycode 4 # KEYCODE_BACK
+  notes_page.click_back_navigation # closing keyboard
+  notes_page.click_back_navigation # KEYCODE_BACK
 end
 
 When("I click back") do
   # $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/back_btn").click
   sleep 2
-  $driver.press_keycode 4 # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
 end
 
 Then(/I should see a note with the title (.*)/) do |title|

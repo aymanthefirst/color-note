@@ -5,7 +5,6 @@ Feature: Notes
     And I skip the tutorial
     Then I am on the notes page
 
-  @kingAyman
   Scenario: Getting to the first note editor page
     Given I have opened the app
     And I skip the tutorial

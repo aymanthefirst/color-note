@@ -1,4 +1,4 @@
-class HomePage
+class Tutorial
 
   def initialize driver
     @driver = driver
