@@ -26,10 +26,7 @@ end
 Given("I am editting a new note") do
   notes_page.skip_tutorial
   notes_page.click_add_note
-  notes_page.cick_add_text_nte
-
-  # All the pevious sps to get here
-  # pending # Write coe here tha tur he phrse above into concee action
+  notes_page.click_add_text_note
 end
 
 When(/I input a note title of (.*)/) do |title|
@@ -76,4 +73,17 @@ end
 
 When(/I add a final item called (.*)/) do |item|
   notes_page.input_last_checklist_item item
+end
+
+Given("I add {int} notes") do |int|
+  notes_page.add_multiple_notes int
+end
+
+When("I sort alphabetically") do
+  notes_page.sort_notes_alphabetically
+end
+
+Then("I should see {int} notes in alphabetical order") do |int|
+  answer = (1..int).map {|i| "item#{i}"}
+  expect(notes_page.get_all_notes_titles).to eq answer
 end
