@@ -24,8 +24,8 @@ class SettingsPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").click
   end
 
-  def check_new_default_color_displayed?
-    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").displayed?
+  def check_new_default_color_selected?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").selected?
   end
 
 end

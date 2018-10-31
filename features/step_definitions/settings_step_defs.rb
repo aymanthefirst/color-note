@@ -28,22 +28,26 @@ When("I select and change the deault color") do
   sleep 2
   notes_page.click_back_navigation # KEYCODE_BACK
   notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
   sleep 2
 end
 
 When("I click add note") do
-  notes_page.click_add_note
+  notes_page.click_add_note_from_nav
   notes_page.click_add_text_note
   $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_title").send_keys "After changing default color"
   $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_note").send_keys "Example note description"
+  sleep 2
+  notes_page.click_back_navigation # KEYCODE_BACK
   sleep 2
 end
 
 Then("I should be able to see the that default colour of the has changed") do
   $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/color_btn").click
-  expect(settings_page.check_new_default_color_displayed?).to be(true)
+  expect(settings_page.check_new_default_color_selected?).to be(true)
+  sleep 2
   notes_page.click_back_navigation # closing keyboard
   notes_page.click_back_navigation # KEYCODE_BACK
   notes_page.click_back_navigation # KEYCODE_BACK
-  sleep 2
+  sleep 4
 end
