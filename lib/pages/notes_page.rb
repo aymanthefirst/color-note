@@ -53,4 +53,54 @@ class NotesPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/main_btn1").click
   end
 
+  def click_add_checklist_note
+    @driver.find_elements(:id, "com.socialnmobile.dictapps.notepad.color.note:id/text")[1].click
+  end
+
+  def click_add_checklist_item
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/editlist").find_element(:class, "android.widget.LinearLayout").click
+  end
+
+  def input_checklist_item_text string
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit").send_keys string
+  end
+
+  def input_checklist_item string
+    input_checklist_item_text string
+    @driver.find_element(:id, "android:id/button3").click
+  end
+
+  def input_last_checklist_item string
+    input_checklist_item_text string
+    @driver.find_element(:id, "android:id/button1").click
+  end
+
+  def add_complete_note string
+    click_add_note_from_nav
+    click_add_text_note
+    input_note_info string
+    3.times do
+      click_back_navigation
+      sleep 1
+    end
+  end
+
+  def add_multiple_notes n
+    (1..n).each do |i|
+      add_complete_note "item#{i}"
+    end
+  end
+
+  def sort_notes_alphabetically
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/text_button_center").click
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/list").find_elements(:class, "android.widget.LinearLayout")[2].click
+  end
+
+  def get_all_notes_titles
+    answer = @driver.find_elements(:id, "com.socialnmobile.dictapps.notepad.color.note:id/title").map do |item|
+      item[:text]
+    end
+    return answer
+  end
+
 end

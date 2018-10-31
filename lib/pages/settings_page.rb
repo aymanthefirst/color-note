@@ -9,15 +9,23 @@ class SettingsPage
   end
 
   def click_default_screen
-    puts ">>>>>>>>>>>>>>>>>>>>>>"
-    puts @driver.find_elements(:class, "android.widget.LinearLayout")[7][:text]
-    puts "<<<<<<<<<<<<<<<<<<<<<<"
-
     @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
   end
 
   def click_new_default_option
     @driver.find_elements(:class, "android.widget.CheckedTextView").last.click
+  end
+
+  def click_default_color
+    @driver.find_elements(:class, "android.widget.LinearLayout")[8].click
+  end
+
+  def choose_default_color
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").click
+  end
+
+  def check_new_default_color_selected?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/btn5").selected?
   end
 
 end

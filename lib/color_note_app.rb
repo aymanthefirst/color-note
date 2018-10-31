@@ -3,6 +3,9 @@ require_relative "pages/notes_page.rb"
 require_relative "pages/search_bar_page.rb"
 require_relative "pages/calendar_page.rb"
 require_relative "pages/archive_page.rb"
+require_relative "pages/themes_page.rb"
+require_relative "pages/settings_page.rb"
+require_relative "pages/search_bar_page.rb"
 
 module ColorNoteApp
 
