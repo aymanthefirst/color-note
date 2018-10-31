@@ -1,4 +1,4 @@
-@mine
+@notesTests
 Feature: Notes
 
   Scenario: Accessing the notes page
@@ -13,7 +13,6 @@ Feature: Notes
     And I click add a text note
     Then I will be on a new notes page
 
-  @noteInfoDan
   Scenario: Completing the note
     Given I am editting a new note
     When I input a note title of TestNote
@@ -22,3 +21,10 @@ Feature: Notes
     And I accept the note
     And I click back
     Then I should see a note with the title TestNote
+
+  Scenario: Getting to a subsequent note editor page
+    Given I have opened the app
+    And I skip the tutorial
+    When I click add note from the navbar
+    And I click add a text note
+    Then I will be on a new notes page

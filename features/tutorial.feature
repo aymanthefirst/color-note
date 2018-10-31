@@ -1,4 +1,3 @@
-@kingAyman
 Feature: I am able to do the tutorial
   As user I am able to go through the tutorial
 
