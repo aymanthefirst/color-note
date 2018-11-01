@@ -1,5 +1,8 @@
 require_relative "pages/tutorial.rb"
 require_relative "pages/notes_page.rb"
+require_relative "pages/search_bar_page.rb"
+require_relative "pages/calendar_page.rb"
+require_relative "pages/archive_page.rb"
 require_relative "pages/themes_page.rb"
 require_relative "pages/settings_page.rb"
 require_relative "pages/search_bar_page.rb"
@@ -16,6 +19,14 @@ module ColorNoteApp
 
   def themes_page
     ThemesPage.new($driver)
+  end
+
+  def calendar_page
+    CalendarPage.new($driver)
+  end
+
+  def archive_page
+    ArchivePage.new($driver)
   end
 
   def settings_page
