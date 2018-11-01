@@ -103,4 +103,33 @@ class NotesPage
     return answer
   end
 
+  def click_note num
+    @driver.find_elements(:id, "com.socialnmobile.dictapps.notepad.color.note:id/background")[num-1].click
+  end
+
+  def click_note_options
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/overflow_btn").click
+  end
+
+  def click_check_note_option
+    @driver.find_elements(:class, "android.widget.LinearLayout")[0].click
+  end
+
+  def click_delete_note_dropdown
+    # @driver.find_elements(:id, "android:id/content")[1].click
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/bottom_menu_delete").click
+    @driver.find_element(:id, "android:id/button1").click
+  end
+
+  def get_note_title_decoration
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_title").style("text-decoration")
+  end
+
+  def open_note_options num
+    note = @driver.find_elements(:id, "com.socialnmobile.dictapps.notepad.color.note:id/background")[num-1]
+    x = note.location["x"] + note.size["width"]/2
+    y = note.location["y"] + note.size["height"]/2
+    @driver.swipe({start_x: x, start_y: y, end_x: x, end_y: y, duration: 3000})
+  end
+
 end

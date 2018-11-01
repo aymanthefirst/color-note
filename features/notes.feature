@@ -3,7 +3,7 @@ Feature: Notes
   Scenario: Accessing the notes page
     Given I have opened the app
     And I skip the tutorial
-    Then I am on the notes page
+    Then I am on the blank notes page
 
   Scenario: Getting to the first note editor page
     Given I have opened the app
@@ -49,3 +49,21 @@ Feature: Notes
     And I add 3 notes
     When I sort alphabetically
     Then I should see 3 notes in alphabetical order
+
+  Scenario: Check off note
+    Given I have opened the app
+    And I skip the tutorial
+    And I add 1 note
+    When I click on the first note
+    And I open the note options
+    And I click check
+    And I click back
+    Then I should see a note with the title item1
+
+  Scenario: Delete a note
+    Given I have opened the app
+    And I skip the tutorial
+    And I add 1 note
+    When I long-click on the first note
+    And I click delete on the dropdown
+    Then I am on the blank notes page
