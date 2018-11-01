@@ -5,11 +5,11 @@ class LogInPage
   end
 
   def click_log_in_page
-        @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[0].click
   end
 
   def click_facebook_log_in
-        @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/fb_signin").click
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/fb_signin").click
   end
 
   def fill_fb_username
@@ -22,6 +22,10 @@ class LogInPage
 
   def click_submit
     @driver.find_element(:id, "u_0_5").click
+  end
+
+  def isloggedin?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/username").text
   end
 
 end
