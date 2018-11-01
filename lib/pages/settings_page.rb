@@ -68,6 +68,10 @@ class SettingsPage
     @driver.find_elements(:class, "android.widget.LinearLayout")[13].click
   end
 
+  def scroll_down
+    @driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 317, :duration => 2000)
+  end
+
   def click_show_count_on_widget
     @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
   end
@@ -82,6 +86,70 @@ class SettingsPage
 
   def choose_widget_transparency
     @driver.find_elements(:class, "android.widget.CheckedTextView")[7].click
+  end
+
+  def click_calendar_link
+    @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
+  end
+
+  def click_first_day_of_the_week
+    @driver.find_elements(:class, "android.widget.LinearLayout")[8].click
+  end
+
+  def choose_first_day_of_the_week
+    @driver.find_elements(:class, "android.widget.CheckedTextView").first.click
+  end
+
+  def click_show_lunar_date
+    @driver.find_elements(:class, "android.widget.LinearLayout")[9].click
+  end
+
+  def choose_lunar_date
+    @driver.find_elements(:class, "android.widget.CheckedTextView").last.click
+  end
+
+  def check_calendar_displayed?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/title_container").displayed?
+  end
+
+  def click_text_editor
+    @driver.find_elements(:class, "android.widget.LinearLayout")[10].click
+  end
+
+  def click_edit_title_in_text_editor
+    @driver.find_elements(:class, "android.widget.LinearLayout")[1].click
+  end
+
+  def click_use_colordict_in_text_editor
+    @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
+  end
+
+  def click_checklist_editor
+    @driver.find_elements(:class, "android.widget.LinearLayout")[12].click
+  end
+
+  def click_list_item_drag_and_drop
+    @driver.find_elements(:class, "android.widget.LinearLayout")[1].click
+  end
+
+  def click_auto_sort_by_status
+    @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
+  end
+
+  def click_auto_link
+    @driver.find_elements(:class, "android.widget.LinearLayout")[14].click
+  end
+
+  def click_note_edit_button
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_btn").click
+  end
+
+  def check_note_enable?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_title").enabled?
+  end
+
+  def check_colordict_displayed?
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/search_bar").displayed?
   end
 
 end

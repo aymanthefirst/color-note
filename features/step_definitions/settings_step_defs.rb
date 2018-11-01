@@ -42,7 +42,7 @@ And("I click add note") do
   sleep 2
 end
 
-Then("I should be able to see the that default colour of the has changed") do
+Then("I should be able to see the that default colour of the note has changed") do
   $driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/color_btn").click
   expect(settings_page.check_new_default_color_selected?).to be(true)
   sleep 2
@@ -95,7 +95,7 @@ When("I have clicked on the settings link") do
   settings_page.click_settings_link_class_changed_bug
 end
 
-When("I select and change the default list item height") do
+And("I select and change the default list item height") do
   settings_page.click_list_item_height
   settings_page.choose_list_item_height_tiny
   notes_page.click_back_navigation # KEYCODE_BACK
@@ -125,7 +125,8 @@ end
 #TEST TO ADJUST THE WIDGET OPTIONS
 When("I scroll down on the app") do
   sleep 2
-  $driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 315, :duration => 2000)
+  settings_page.scroll_down
+  # $driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 315, :duration => 2000)
   sleep 2
 end
 
@@ -137,4 +138,40 @@ Then("I should be able to change the widget settings") do
   settings_page.click_widget_transparency
   settings_page.choose_widget_transparency
   sleep 2
+end
+
+#TEST TO CHANGE THE CALENDAR OPTIONS IN THE SETTINGS
+When("I click on the calendar link") do
+  settings_page.click_calendar_link
+end
+
+Then("I should be able to change the calendar settings") do
+  settings_page.click_first_day_of_the_week
+  settings_page.choose_first_day_of_the_week
+  settings_page.click_show_lunar_date
+  settings_page.choose_lunar_date
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+And("I should be able to see the changes in the calendar") do
+  expect(settings_page.check_calendar_displayed?).to eq(true)
+end
+
+#TEST TO CHANGE THE EDIT OPTIONS IN THE SETTINGS
+When("I select and change the text editor options") do
+  settings_page.click_text_editor
+  settings_page.click_edit_title_in_text_editor
+  settings_page.click_use_colordict_in_text_editor
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+Then("I should be able to see the changes on the note") do
+  settings_page.click_on_existing_note
+  settings_page.click_note_edit_button
+  expect(settings_page.check_note_enable?).to be(false)
+  expect(settings_page.check_colordict_displayed?).to be(true)
 end
