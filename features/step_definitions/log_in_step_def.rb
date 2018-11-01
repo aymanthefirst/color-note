@@ -22,7 +22,7 @@ Given("I access the Google sign in page") do
 When("I click on the gmail username") do
   log_in_page.click_log_in_page
   log_in_page.click_google_log_in
-  log_in_page.click_sign_in
+  log_in_page.click_ok_to_continue
   log_in_page.click_on_email
   
   end

@@ -28,17 +28,11 @@ class LogInPage
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/google_signin").click
   end
 
-  def click_sign_in
+  def click_ok_to_continue
     @driver.find_element(:id, "android:id/button1").click
   end
 
   def click_on_email
     @driver.find_elements(:class, "android.view.View")[8].click
   end
-
-
-  def isloggedin?
-    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/username").text
-  end
-
 end

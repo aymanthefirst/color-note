@@ -5,7 +5,7 @@ Feature: Login
     Given I access the facebook sign in page
     When I click on the login button
     Then I am redirected and logged in
-
+@manavendu1
   Scenario: Inputting correct user details
     Given I access the Google sign in page
     When I click on the gmail username
