@@ -31,9 +31,9 @@ class LogInPage
   def click_sign_in
     @driver.find_element(:id, "android:id/button1").click
   end
-  
+
   def click_on_email
-    @driver.find_elements(:class, "android.view.View").first.click
+    @driver.find_elements(:class, "android.view.View")[8].click
   end
 
 
