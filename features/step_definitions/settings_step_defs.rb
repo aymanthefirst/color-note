@@ -1,8 +1,5 @@
 #TEST TO SLEECT DEFAULT SCREEN
 When("I click on the settings link") do
-  puts "-------------------------"
-    puts $driver.get_source
-  puts "-------------------------"
   settings_page.click_settings_link
 end
 
@@ -126,6 +123,18 @@ And("I should be able to change the list item height back to default") do
 end
 
 #TEST TO ADJUST THE WIDGET OPTIONS
+When("I scroll down on the app") do
+  sleep 2
+  $driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 315, :duration => 2000)
+  sleep 2
+end
+
 Then("I should be able to change the widget settings") do
-  pending # Write code here that turns the phrase above into concrete actions
+  settings_page.click_show_count_on_widget
+  sleep 2
+  settings_page.click_show_all_day_reminder
+  sleep 2
+  settings_page.click_widget_transparency
+  settings_page.choose_widget_transparency
+  sleep 2
 end

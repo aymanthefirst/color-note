@@ -28,7 +28,6 @@ Feature: I should be able to access the settings
     Then I should be able to select the note and see the font size has changed
     And I should be able to change the font size to anything else or back to default
 
-  @testone
   Scenario: I should be able to change the list item height
     Given I am able to access the app
     And I click skip the tutorial
@@ -40,10 +39,10 @@ Feature: I should be able to access the settings
     Then I should be able to select the checklist and see that the list item height has changed
     And I should be able to change the list item height back to default
 
-  @farhaan
   Scenario: I should be able to adjust the widget options
     Given I am able to access the app
     And I click skip the tutorial
     When I click on the nav bar
     And I click on the settings link
+    And I scroll down on the app
     Then I should be able to change the widget settings

@@ -69,15 +69,19 @@ class SettingsPage
   end
 
   def click_show_count_on_widget
-    @driver.find_elements(:class, "android.widget.LinearLayout")[10].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
   end
 
   def click_show_all_day_reminder
-    @driver.find_elements(:class, "android.widget.LinearLayout")[12].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[5].click
   end
 
   def click_widget_transparency
-    @driver.find_elements(:class, "android.widget.LinearLayout")[15].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
+  end
+
+  def choose_widget_transparency
+    @driver.find_elements(:class, "android.widget.CheckedTextView")[7].click
   end
 
 end
