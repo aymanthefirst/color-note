@@ -5,7 +5,7 @@ class LogInPage
   end
 
   def click_log_in_page
-        @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
+        @driver.find_elements(:class, "android.widget.LinearLayout")[0].click
   end
 
   def click_facebook_log_in
@@ -23,5 +23,18 @@ class LogInPage
   def click_submit
     @driver.find_element(:id, "u_0_5").click
   end
+
+  def click_google_log_in
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/google_signin").click
+  end
+
+  def click_sign_in
+    @driver.find_element(:id, "android:id/button1").click
+  end
+  
+  def click_on_email
+    @driver.find_elements(:class, "android.view.View").first.click
+  end
+
 
 end

@@ -23,7 +23,10 @@ Feature: Login for facebook
         Then I get an error message
 
 
-
 # Feature: Login for google
-#
-# Feature: Login for email
+@manavendu
+    Scenario: Inputting correct user details  
+        Given I access the Google sign in page
+        When I click on the gmail username
+        Then I am logged in and see the navbar with username
+
