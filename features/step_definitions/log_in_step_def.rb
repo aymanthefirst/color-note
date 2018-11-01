@@ -1,20 +1,21 @@
 Given("I access the facebook sign in page") do
-  # search_bar_page.click_menu
-  # log_in_page.click_log_in_page
-  # log_in_page.click_facebook_log_in
+  notes_page.skip_tutorial
+  search_bar_page.click_menu
+  log_in_page.click_log_in_page
+  log_in_page.click_facebook_log_in
 end
 
 
 Given("I input a valid username") do
-  # log_in_page.fill_fb_username
+  log_in_page.fill_fb_username
 end
 
 Given("I input a valid password") do
-  # log_in_page.fill_fb_password
+  log_in_page.fill_fb_password
 end
 
 When("I click on the login button") do
-  # log_in_page.click_submit
+  log_in_page.click_submit
 end
 
 Then("I am redirected and logged in") do
