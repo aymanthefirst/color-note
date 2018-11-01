@@ -16,20 +16,15 @@ Given("I access the Google sign in page") do
   notes_page.skip_tutorial
   search_bar_page.click_menu
   log_in_page.click_log_in_page
- 
-  
   log_in_page.click_google_log_in
-
-
  end
 
 When("I click on the gmail username") do
+  log_in_page.click_log_in_page
   log_in_page.click_google_log_in
   log_in_page.click_sign_in
-
-  end
   log_in_page.click_on_email
-
+  
   end
 
 
