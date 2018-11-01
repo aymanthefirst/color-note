@@ -1,4 +1,3 @@
-@kingAyman
 Feature: Search bar
 
   Scenario: On typing the valid note details it should show the searched item
