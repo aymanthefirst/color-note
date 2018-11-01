@@ -1,5 +1,5 @@
-@kingAyman
-Feature: Login for facebook
+@ayman
+Feature: Login
 
     Scenario: Inputting correct user details logs user in
         Given I access the facebook sign in page
@@ -22,7 +22,10 @@ Feature: Login for facebook
         When I click on the login button
         Then I get an error message
 
-
+    Scenario: logging in via facebook
+        Given I access the facebook sign in page
+        When I click on the login button
+        Then I am redirected and logged in
 # Feature: Login for google
 @manavendu
     Scenario: Inputting correct user details  
@@ -30,3 +33,4 @@ Feature: Login for facebook
         When I click on the gmail username
         Then I am logged in and see the navbar with username
 
+  
