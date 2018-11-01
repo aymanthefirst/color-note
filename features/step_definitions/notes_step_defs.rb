@@ -59,9 +59,6 @@ When("I click add note from the navbar") do
   notes_page.click_add_note_from_nav
 end
 
-<<<<<<< HEAD
- 
-=======
 When("I click add a checklist note") do
   notes_page.click_add_checklist_note
 end
@@ -90,4 +87,3 @@ Then("I should see {int} notes in alphabetical order") do |int|
   answer = (1..int).map {|i| "item#{i}"}
   expect(notes_page.get_all_notes_titles).to eq answer
 end
->>>>>>> dev

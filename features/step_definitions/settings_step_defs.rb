@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 #TEST TO SLEECT DEFAULT SCREEN
 When("I click on the settings link") do
   settings_page.click_settings_link
@@ -53,4 +51,3 @@ Then("I should be able to see the that default colour of the has changed") do
   notes_page.click_back_navigation # KEYCODE_BACK
   sleep 4
 end
->>>>>>> dev
