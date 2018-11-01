@@ -159,7 +159,7 @@ And("I should be able to see the changes in the calendar") do
   expect(settings_page.check_calendar_displayed?).to eq(true)
 end
 
-#TEST TO CHANGE THE EDIT OPTIONS IN THE SETTINGS
+#TEST TO CHANGE THE NOTE EDIT TEXT OPTIONS IN THE SETTINGS
 When("I select and change the text editor options") do
   settings_page.click_text_editor
   settings_page.click_edit_title_in_text_editor
@@ -174,4 +174,42 @@ Then("I should be able to see the changes on the note") do
   settings_page.click_note_edit_button
   expect(settings_page.check_note_enable?).to be(false)
   expect(settings_page.check_colordict_displayed?).to be(true)
+end
+
+#TEST TO CHANGE THE CHECLIST OPTION IN THE SETTINGS
+Given("I have added a checklist and have changed the order") do
+  notes_page.click_add_note_from_nav
+  notes_page.click_add_checklist_note
+  notes_page.click_add_checklist_item
+  notes_page.input_checklist_item "List 1"
+  notes_page.input_checklist_item "List 2"
+  notes_page.input_checklist_item "List 3"
+  notes_page.input_last_checklist_item "List 4"
+  sleep 2
+  $driver.swipe(:start_x => 109, :start_y => 779, :end_x => 109, :end_y => 550, :duration => 2000)
+  sleep 2
+  notes_page.click_back_navigation # KEYCODE_BACK
+  settings_page.click_second_checklist
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+When("I select and change the checklist editor options") do
+  settings_page.click_checklist_editor
+  settings_page.click_list_item_drag_and_drop
+  settings_page.click_auto_sort_by_status
+  notes_page.click_back_navigation # KEYCODE_BACK
+  sleep 2
+  notes_page.click_back_navigation # KEYCODE_BACK
+  sleep 2
+  notes_page.click_back_navigation # KEYCODE_BACK
+end
+
+Then("I should be able to see the changes on the checklist") do
+  settings_page.click_on_existing_checklist
+  settings_page.check_list_item
+  sleep 2
+  settings_page.click_checklist_edit_button
+  settings_page.click_button_to_change_order
+  sleep 2
+  expect(settings_page.check_if_button_order_displayed?).to be(true)
 end

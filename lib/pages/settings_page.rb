@@ -69,7 +69,7 @@ class SettingsPage
   end
 
   def scroll_down
-    @driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 317, :duration => 2000)
+    @driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 295, :duration => 2000)
   end
 
   def click_show_count_on_widget
@@ -150,6 +150,26 @@ class SettingsPage
 
   def check_colordict_displayed?
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/search_bar").displayed?
+  end
+
+  def check_list_item
+    @driver.find_elements(:class, "android.widget.RelativeLayout")[3].click
+  end
+
+  def click_second_checklist
+    @driver.find_elements(:class, "android.widget.RelativeLayout")[5].click
+  end
+
+  def click_checklist_edit_button
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_btn").click
+  end
+
+  def check_if_button_order_displayed?
+    @driver.find_elements(:class, "android.widget.ImageButton")[2].displayed?
+  end
+
+  def click_button_to_change_order
+    @driver.find_elements(:class, "android.widget.ImageButton")[2].click
   end
 
 end

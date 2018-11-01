@@ -58,7 +58,6 @@ Feature: I should be able to access the settings
     Then I should be able to change the calendar settings
     And I should be able to see the changes in the calendar
 
-  @farhaan
   Scenario: I should be able to change the note text editor settings
     Given I am able to access the app
     And I click skip the tutorial
@@ -68,3 +67,13 @@ Feature: I should be able to access the settings
     And I scroll down on the app
     And I select and change the text editor options
     Then I should be able to see the changes on the note
+
+  Scenario: I should be able to change the checklist text editor settings
+    Given I am able to access the app
+    And I click skip the tutorial
+    And I have added a checklist and have changed the order
+    When I click on the nav bar
+    And I click on the settings link
+    And I scroll down on the app
+    And I select and change the checklist editor options
+    Then I should be able to see the changes on the checklist
