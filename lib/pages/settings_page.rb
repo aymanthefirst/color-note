@@ -69,19 +69,31 @@ class SettingsPage
   end
 
   def scroll_down
-    @driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 317, :duration => 2000)
+    @driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 295, :duration => 2000)
+  end
+
+  def swipe_down
+    swipe_start = @driver.find_elements(:class, "android.widget.TextView")[1]
+    x1 = swipe_start.location["x"] + swipe_start.size["width"]/2
+    y1 = swipe_start.location["y"] + swipe_start.size["height"] * 0.9
+
+    swipe_end = @driver.find_elements(:class, "android.widget.LinearLayout")[13]
+    x2 = swipe_end.location["x"] + swipe_end.size["width"]/2
+    y2 = swipe_end.location["y"] + swipe_end.size["height"]/2
+
+    @driver.swipe({start_x: x2, start_y: y2, end_x: x1, end_y: y1, duration: 2000})
   end
 
   def click_show_count_on_widget
-    @driver.find_elements(:class, "android.widget.LinearLayout")[3].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[4].click
   end
 
   def click_show_all_day_reminder
-    @driver.find_elements(:class, "android.widget.LinearLayout")[5].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[6].click
   end
 
   def click_widget_transparency
-    @driver.find_elements(:class, "android.widget.LinearLayout")[7].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[8].click
   end
 
   def choose_widget_transparency
@@ -93,7 +105,7 @@ class SettingsPage
   end
 
   def click_first_day_of_the_week
-    @driver.find_elements(:class, "android.widget.LinearLayout")[8].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[9].click
   end
 
   def choose_first_day_of_the_week
@@ -101,7 +113,7 @@ class SettingsPage
   end
 
   def click_show_lunar_date
-    @driver.find_elements(:class, "android.widget.LinearLayout")[9].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[10].click
   end
 
   def choose_lunar_date
@@ -113,7 +125,7 @@ class SettingsPage
   end
 
   def click_text_editor
-    @driver.find_elements(:class, "android.widget.LinearLayout")[10].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[11].click
   end
 
   def click_edit_title_in_text_editor
@@ -125,7 +137,7 @@ class SettingsPage
   end
 
   def click_checklist_editor
-    @driver.find_elements(:class, "android.widget.LinearLayout")[12].click
+    @driver.find_elements(:class, "android.widget.LinearLayout")[13].click
   end
 
   def click_list_item_drag_and_drop
@@ -150,6 +162,26 @@ class SettingsPage
 
   def check_colordict_displayed?
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/search_bar").displayed?
+  end
+
+  def check_list_item
+    @driver.find_elements(:class, "android.widget.RelativeLayout")[3].click
+  end
+
+  def click_second_checklist
+    @driver.find_elements(:class, "android.widget.RelativeLayout")[5].click
+  end
+
+  def click_checklist_edit_button
+    @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/edit_btn").click
+  end
+
+  def check_if_button_order_displayed?
+    @driver.find_elements(:class, "android.widget.ImageButton")[2].displayed?
+  end
+
+  def click_button_to_change_order
+    @driver.find_elements(:class, "android.widget.ImageButton")[2].click
   end
 
 end
