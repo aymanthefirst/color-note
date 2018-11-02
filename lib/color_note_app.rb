@@ -10,10 +10,6 @@ require_relative "pages/trash_page.rb"
 
 module ColorNoteApp
 
-  def tutorial
-    Tutorial.new($driver)
-  end
-
   def notes_page
     NotesPage.new($driver)
   end
