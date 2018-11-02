@@ -1,4 +1,3 @@
-require_relative "pages/tutorial.rb"
 require_relative "pages/notes_page.rb"
 require_relative "pages/search_bar_page.rb"
 require_relative "pages/calendar_page.rb"
@@ -7,6 +6,7 @@ require_relative "pages/themes_page.rb"
 require_relative "pages/settings_page.rb"
 require_relative "pages/search_bar_page.rb"
 require_relative "pages/log_in_page.rb"
+require_relative "pages/trash_page.rb"
 
 module ColorNoteApp
 
@@ -40,6 +40,10 @@ module ColorNoteApp
 
   def log_in_page
     LogInPage.new($driver)
+  end
+
+  def trash_page
+    TrashPage.new($driver)
   end
 
 end
