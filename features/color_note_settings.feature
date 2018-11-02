@@ -47,6 +47,7 @@ Feature: I should be able to access the settings
     And I scroll down on the app
     Then I should be able to change the widget settings
 
+  @farhaan
   Scenario: I should be able to change the calendar settings
     Given I am able to access the app
     And I click skip the tutorial

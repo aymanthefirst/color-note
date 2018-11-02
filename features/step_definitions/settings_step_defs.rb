@@ -125,7 +125,8 @@ end
 #TEST TO ADJUST THE WIDGET OPTIONS
 When("I scroll down on the app") do
   sleep 2
-  settings_page.scroll_down
+  # settings_page.scroll_down
+  settings_page.swipe_down
   # $driver.swipe(:start_x => 0, :start_y => 1800, :end_x => 0, :end_y => 315, :duration => 2000)
   sleep 2
 end
