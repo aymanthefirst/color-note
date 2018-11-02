@@ -6,7 +6,7 @@ When("I skip the tutorial") do
   notes_page.skip_tutorial
 end
 
-Then("I am on the notes page") do
+Then("I am on the blank notes page") do
   expect(notes_page.get_notes_text).to include "Add Note"
 end
 
@@ -75,7 +75,7 @@ When(/I add a final item called (.*)/) do |item|
   notes_page.input_last_checklist_item item
 end
 
-Given("I add {int} notes") do |int|
+Given(/I add (\d+) notes?/) do |int|
   notes_page.add_multiple_notes int
 end
 
@@ -86,4 +86,30 @@ end
 Then("I should see {int} notes in alphabetical order") do |int|
   answer = (1..int).map {|i| "item#{i}"}
   expect(notes_page.get_all_notes_titles).to eq answer
+end
+
+When("I click on the first note") do
+  notes_page.click_note 1
+end
+
+When("I open the note options") do
+  notes_page.click_note_options
+end
+
+When("I click check") do
+  sleep 2
+  notes_page.click_check_note_option
+end
+
+Then("the note title will be checked off") do
+  expect(notes_page.get_note_title_decoration).to eq "line-through"
+end
+
+
+When("I long-click on the first note") do
+  notes_page.open_note_options 1
+end
+
+When("I click delete on the dropdown") do
+  notes_page.click_delete_note_dropdown
 end
