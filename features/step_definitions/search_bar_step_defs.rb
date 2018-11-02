@@ -12,6 +12,7 @@ end
 
 And("I am on the search page") do
   search_bar_page.click_menu
+  sleep 2
   search_bar_page.click_search_page
 end
 
