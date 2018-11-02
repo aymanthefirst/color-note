@@ -29,7 +29,7 @@ class LogInPage
   end
 
   def click_ok_to_continue
-    @driver.find_element(:id, "android:id/button1").click
+    @driver.find_element(:class, "android.widget.Button")[0].click
   end
 
   def click_on_email
