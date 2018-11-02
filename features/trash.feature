@@ -1,6 +1,6 @@
-@latest
 Feature: Trash Can
 
+  @latest
   Scenario: Restoring a deleted note
     Given I have deleted a note
     And I navigate to the trash page

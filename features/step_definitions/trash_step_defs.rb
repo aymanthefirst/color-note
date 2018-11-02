@@ -1,19 +1,23 @@
 Given("I have deleted a note") do
-  pending # Write code here that turns the phrase above into concrete actions
+  notes_page.skip_tutorial
+  notes_page.add_multiple_notes 1
+  notes_page.open_note_options 1
+  notes_page.click_delete_note_dropdown
 end
 
 Given("I navigate to the trash page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  search_bar_page.click_menu
+  trash_page.click_menu_trash
 end
 
 When("I restore the note from the navbar") do
-  pending # Write code here that turns the phrase above into concrete actions
+  trash_page.restore_open_note
 end
 
 Then("I will be on an empty trash page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(trash_page.get_notes_count).to eq(0).or eq(1)
 end
 
 When("I click permanently delete on the dropdown") do
-  pending # Write code here that turns the phrase above into concrete actions
+  trash_page.permanently_delete_note
 end

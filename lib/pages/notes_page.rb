@@ -116,7 +116,7 @@ class NotesPage
   end
 
   def click_delete_note_dropdown
-    # @driver.find_elements(:id, "android:id/content")[1].click
+    # For old versions of the app (up to 3.x), use // @driver.find_elements(:id, "android:id/content")[1].click //
     @driver.find_element(:id, "com.socialnmobile.dictapps.notepad.color.note:id/bottom_menu_delete").click
     @driver.find_element(:id, "android:id/button1").click
   end
